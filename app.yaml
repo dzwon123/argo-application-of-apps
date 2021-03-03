@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: helm-guestbook
-  namespace: argocd
+  namespace: test
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -15,6 +15,6 @@ spec:
       prune: true
   project: default
   source:
-    path: 
+    path: .
     repoURL: https://github.com/dzwon123/argo-applications.git
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    targetRevision: HEAD
